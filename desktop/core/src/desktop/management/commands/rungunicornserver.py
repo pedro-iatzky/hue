@@ -127,7 +127,7 @@ def rungunicornserver():
       'paste': None,
       'pidfile': None,
       'preload_app': None,
-      'proc_name': None,
+      'proc_name': "hue server",
       'proxy_allow_ips': None,
       'proxy_protocol': None,
       'pythonpath': None,
@@ -137,7 +137,7 @@ def rungunicornserver():
       'reload_engine': None,
       'sendfile': None,
       'spew': None,
-      'ssl_version': None,                    # SSL version to use (see stdlib ssl module) [ssl.PROTOCOL_SSLv23, ssl.PROTOCOL_TLSv1]
+      'ssl_version': ssl.PROTOCOL_TLSv1_2,                    # SSL version to use (see stdlib ssl module) [ssl.PROTOCOL_SSLv23, ssl.PROTOCOL_TLSv1]
       'statsd_host': None,
       'statsd_prefix': None,
       'suppress_ragged_eofs': None,           # Suppress ragged EOFs (see stdlib ssl module)
