@@ -62,6 +62,9 @@ spec:
         - name: hive-config-volume
           mountPath: /etc/hive/conf/hive-site.xml
           subPath: hive-site
+        {{- with .Values.extraVolumeMounts }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
         readinessProbe:
           httpGet:
             path: /desktop/debug/is_alive
@@ -94,6 +97,9 @@ spec:
         - name: hive-config-volume
           configMap:
             name: hive-config
+        {{- with .Values.extraVolumes }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
 {{ if .Values.balancer.enabled }}
         - name: nginx-config
           configMap:
